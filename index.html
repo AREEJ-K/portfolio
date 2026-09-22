@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areej Aseeri | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- التنسيقات مدمجة مباشرة لضمان عمل التصميم الفخم 100% -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.7;
+        }
+
+        header {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 1) 100%);
+        }
+
+        .badge {
+            background: rgba(212, 163, 115, 0.15);
+            color: #d4a373;
+            border: 1px solid rgba(212, 163, 115, 0.3);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        header h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .header-tags {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .about-card, .project-card, .skill-category {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(16px);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover, .project-card:hover, .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: #d4a373;
+        }
+
+        .about-card {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: #38bdf8;
+            display: inline-block;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-size: 1.4rem;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-size: 0.98rem;
+        }
+
+        .project-links-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .project-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            background: #d4a373;
+            color: #0f172a;
+            border-color: #d4a373;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-category p {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+        }
+
+        #contact {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 1) 100%);
+            border: 1px solid rgba(212, 163, 115, 0.2);
+            padding: 60px 30px;
+            border-radius: 20px;
+        }
+
+        #contact h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        #contact p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            background: #d4a373;
+            color: #0f172a;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .linkedin-btn {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .linkedin-btn:hover {
+            background: #ffffff;
+            color: #0f172a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 900px) {
+            .skills-container { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <span class="badge">Portfolio </span>
+            <h1>Areej Aseeri</h1>
+            <p>Information Systems Specialist & Creative Technologist</p>
+            <div class="header-tags">Data & BI • UI/UX & Brand Identity • Web Development</div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-card">
+                <p>Information Systems Specialist bridging the gap between data-driven business intelligence and digital design. Passionate about transforming complex data into clear insights while crafting intuitive user interfaces and engaging brand identities.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <span class="card-tag">Business Intelligence</span>
+                    <h3>E-Commerce Sales Analysis</h3>
+                    <p>Comprehensive sales dashboard translating SQL data into actionable business insights via Power BI.</p>
+                    <div class="project-links-group">
+                        <a href="https://github.com/AREEJ-K/E-Commerce-Sales-Analysis" target="_blank" class="project-link">GitHub Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">Data Analytics</span>
+                    <h3>COVID-19 Data Analysis</h3>
+                    <p>Deep-dive data exploration and statistical visualization using Python, Pandas, and Matplotlib.</p>
+                    <div class="project-links-group">
+                        <a href="https://github.com/AREEJ-K/us-covid19-data-analysis" target="_blank" class="project-link">GitHub Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">Web Development</span>
+                    <h3>Al-Tayyar Website</h3>
+                    <p>Fully responsive, interactive web application built with clean HTML, CSS, and JavaScript.</p>
+                    <div class="project-links-group">
+                        <a href="https://areej-k.github.io/AL-Tayaar-web/" target="_blank" class="project-link">Live Preview ↗</a>
+                        <a href="https://github.com/AREEJ-K/AL-Tayaar-web" target="_blank" class="project-link">GitHub Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card" style="border-top: 4px solid #d4a373;">
+                    <span class="card-tag" style="color: #fbbf24;">UI/UX & Branding</span>
+                    <h3>Orra Matcha & Brand Identity</h3>
+                    <p>Crafting compelling visual identities, brand strategies, and intuitive Figma UI/UX prototypes.</p>
+                    <div class="project-links-group">
+                        <a href="https://www.behance.net/areejaseeri" target="_blank" class="project-link" style="background: rgba(212,163,115,0.2); color: #d4a373; border-color: #d4a373;">View on Behance ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Core Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Data & BI</h3>
+                    <p>SQL Server, Power BI, Python (basic), Pandas, Excel</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Design & Branding</h3>
+                    <p>Figma, Behance, UI/UX Prototyping, Visual Identity</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Development & Tools</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Build Something Together</h2>
+            <p>Open for opportunities in Business Intelligence, Systems Analysis, and Digital Design.</p>
+            <div class="contact-links">
+                <a href="mailto:Areejaseeri12@gmail.com" class="contact-btn">Email Me</a>
+                <a href="https://www.linkedin.com/in/areej-aseeri" target="_blank" class="contact-btn linkedin-btn">LinkedIn Profile</a>
+            <a href="https://github.com/AREEJ-K" target="_blank" class="contact-btn linkedin-btn">GitHub Profile</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Areej Aseeri. Designed & Built with passion.</p>
+    </footer>
+
+</body>
+</html>
